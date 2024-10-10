@@ -1,0 +1,23 @@
+[
+  {
+    "firstname": "Rami",
+    "lastname": "Ammar",
+    "email": "koukaxaf@gmail.com",
+    "phoneNumber": "913854965",
+    "password": "123456"
+  },
+  {
+    "firstname": "test",
+    "lastname": "user",
+    "email": "tarty55xaf@gmail.com",
+    "phoneNumber": "913854968",
+    "password": "12345678"
+  },
+  {
+    "firstname": "test1",
+    "lastname": "user2",
+    "email": "tasty66xaf@gmail.com",
+    "phoneNumber": "9138549456",
+    "password": "12345652"
+  }
+]
