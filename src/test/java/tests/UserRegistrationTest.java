@@ -23,7 +23,7 @@ public class UserRegistrationTest extends TestBase {
         homeObject = new HomePage(driver);
         homeObject.openRegistrationPage();
         registrationObject = new UserRegistrationPage(driver);
-        registrationObject.userRegistration("ramirez", "biba", "speed120955level@gmail.com", "545581518", "12345678");
+        registrationObject.userRegistration("ramirez", "biba", "spidoxlevel@gmail.com", "545581518", "10045678");
 
         Assert.assertTrue(registrationObject.successMessage.getText().contains("Congratulations!"));
 
@@ -41,7 +41,7 @@ public class UserRegistrationTest extends TestBase {
         homeObject= new HomePage(driver);
         homeObject.openLoginPage();
         loginObject = new LoginPage(driver);
-        loginObject.UserLogin("speed12level@gmail.com", "12345678");
+        loginObject.UserLogin("spidoxlevel@gmail.com", "10045678");
         Assert.assertTrue(registrationObject.lgout.getText().contains("Logout"));
     }
 }

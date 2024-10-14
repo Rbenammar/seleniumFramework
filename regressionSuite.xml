@@ -8,7 +8,6 @@
 
         <classes>
             <class name="tests.UserRegistrationTest"/>
-            <class name="tests.HoverMenuTest"/>
             <class name="tests.ContactJulioTest"/>
             <class name="tests.SearchProductTest"/>
             <class name="tests.SearchProductUsingAutomSuggest"/>

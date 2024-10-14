@@ -16,7 +16,8 @@ public class SearchProductUsingAutomSuggest extends TestBase {
 
         try {
             searchObject =new SearchPage(driver);
-            searchObject.ProductSearchUsingAutoSuggest("macBook");
+
+            searchObject.ProductSearchUsingAutoSuggest("MacBook");
             detailsObject=new ProductDetailsPage(driver);
             Assert.assertEquals(detailsObject.productNamebreadCrumb.getText(), productName);
         } catch (Exception e) {

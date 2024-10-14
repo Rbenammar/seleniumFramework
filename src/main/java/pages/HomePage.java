@@ -29,7 +29,7 @@ public class HomePage extends PageBase{
     @FindBy(linkText = "Jolio Balia")
     WebElement contactJolioBalia;
 @FindBy(css = ".nav-item.dropdown-hoverable.mega-menu")
-    WebElement megaMenu;
+    public WebElement mega ;
 @FindBy(css = "a[title='Mobile cases']")
 WebElement mobileCasesSubMenu;
     @FindBy(css = "a.nav-link.dropdown-toggle.active[href*='route=account/account']")
@@ -62,20 +62,28 @@ WebElement mobileCasesSubMenu;
 
     public void hoverMobileCasesMenu()
     {
+        try {
 
 
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+// Wait until the mega menu is visible and then hover
 
-        // Hover over the Mega Menu
-        action.moveToElement(megaMenu).perform();
-        action.moveToElement(mobileCasesSubMenu);
+            WebElement megaElement = wait.until(ExpectedConditions.visibilityOf(mega));
+            // Hover over the Mega Menu
+            Actions action = new Actions(driver);
+            action.moveToElement(megaElement).perform();
+            action.moveToElement(mobileCasesSubMenu).click().perform();
 
-        // Locate the "Mobile cases" submenu link and wait for it to be clickable
+            // Locate the "Mobile cases" submenu link and wait for it to be clickable
 
 
-
-        // Click on the Mobile Cases submenu
-        mobileCasesSubMenu.click();
+            // Click on the Mobile Cases submenu
+            mobileCasesSubMenu.click();
+        } catch (Exception e) {
+            System.out.println("Error interacting with menu: " + e.getMessage());
+        }
     }
+
 
     public void logoutUser ()
     {

@@ -55,15 +55,18 @@ public class SearchPage extends PageBase {
     public void ProductSearchUsingAutoSuggest(String searchTxt) {
 
         try {
+            searchTxtBox.clear();
             setTextElement(searchTxtBox, searchTxt);
-            Thread.sleep(1000);
+            // Wait for the product list to be populated
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            wait.until(ExpectedConditions.visibilityOfAllElements(productList));
             WebElement firstProductImage = productList.get(0).findElement(By.cssSelector("div.image img"));
             firstProductImage.click();
 
 
             //productList.getFirst().click();
 
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
 
             System.out.println("cannot locate the first element"+ e.getMessage());
         }

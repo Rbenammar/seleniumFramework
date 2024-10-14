@@ -6,7 +6,7 @@ import pages.ProductDetailsPage;
 import pages.SearchPage;
 
 public class SearchProductTest extends TestBase{
-    String productName = "macbook pro";
+    String productName = "MacBook Pro";
 
 SearchPage searchObject;
 ProductDetailsPage detailsObject;
@@ -14,6 +14,7 @@ ProductDetailsPage detailsObject;
 @Test
     public void UserCanSearchForProduct()
 {
+    driver.navigate().to("https://ecommerce-playground.lambdatest.io/index.php?route=common/home");
     searchObject = new SearchPage(driver);
     detailsObject = new ProductDetailsPage(driver);
     searchObject.ProductSearch(productName);
