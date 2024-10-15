@@ -6,9 +6,10 @@ import io.cucumber.java.en.When;
 import org.testng.Assert;
 import pages.HomePage;
 import pages.UserRegistrationPage;
+import tests.CucumberTestbase;
 import tests.TestBase;
 
-public class UserRegistration extends TestBase {
+public class UserRegistration extends CucumberTestbase {
 
     HomePage homeObject;
     UserRegistrationPage registerObject;

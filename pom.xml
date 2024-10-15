@@ -47,7 +47,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.24.0</version>
+            <version>4.25.0</version>
         </dependency>
 
         <dependency>
@@ -156,7 +156,7 @@
         <profile>
             <id>regression</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
                 <property>
                     <name>environment</name>
                     <value>regression</value>
@@ -164,7 +164,7 @@
 
             </activation>
             <properties>
-                <testNGSuite>regressionSuite.xml</testNGSuite>
+                <testNGSuite>regressionSuiteJenkins.xml</testNGSuite>
             </properties>
         </profile>
 

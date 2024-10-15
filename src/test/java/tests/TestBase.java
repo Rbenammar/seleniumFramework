@@ -23,7 +23,7 @@ import java.time.Duration;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-public class TestBase extends AbstractTestNGCucumberTests {
+public class TestBase {
 
     public static WebDriver driver;
 
