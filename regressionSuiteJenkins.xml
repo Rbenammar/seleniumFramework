@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<suite name="regression Test Suite">
    <parameter name="browser" value="chrome"></parameter>
 
-    <test name="Regression Test">
+    <test name="Regression Test Jenkins">
 
         <classes>
-            <class name="tests.UserRegistrationTest"/>
+            <class name="tests.UserRegistrationTestWithJavaFaker"/>
             <class name="tests.ContactJulioTest"/>
             <class name="tests.SearchProductTest"/>
-            <class name="tests.SearchProductUsingAutomSuggest"/>
+            <class name="tests.AddProductToShoppingCard"/>
 
 
         </classes>
