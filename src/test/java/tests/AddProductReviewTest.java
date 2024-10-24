@@ -31,7 +31,7 @@ public class AddProductReviewTest extends TestBase{
         homeObject = new HomePage(driver);
         homeObject.openRegistrationPage();
         registrationObject = new UserRegistrationPage(driver);
-        registrationObject.userRegistration("ramirez", "biba", "speed12567891level@gmail.com", "545581518", "12345678");
+        registrationObject.userRegistration("ramirez", "biba", "spidoxxx1level@gmail.com", "545581518", "12345678");
 
         Assert.assertTrue(registrationObject.successMessage.getText().contains("Congratulations!"));
     }

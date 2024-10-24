@@ -1,30 +1,33 @@
 package tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.UserRegistrationPage;
 
-import java.time.Duration;
-
-public class UserRegistrationTest extends TestBase {
+public class UserRegistrationParallelTesting2 extends TestBase2 {
     HomePage homeObject;
     UserRegistrationPage registrationObject;
     LoginPage loginObject;
 
+    Faker fakeData = new Faker();
+    String firstname = fakeData.name().firstName();
+    String lastname = fakeData.name().lastName();
+    String email = fakeData.internet().emailAddress();
+    String phoneNumber = fakeData.number().digits(9);
+    String password = fakeData.number().digits(8);
+
 
     @Test(priority = 1)
     public void userCanRegistrateSuccessfully() {
-        homeObject = new HomePage(driver);
+        homeObject = new HomePage(getDriver());
         homeObject.openRegistrationPage();
-        registrationObject = new UserRegistrationPage(driver);
-        registrationObject.userRegistration("ramirez", "biba", "spidoxxx1level@gmail.com", "545581518", "10045678");
-
+        registrationObject = new UserRegistrationPage(getDriver());
+        registrationObject.userRegistration(firstname,lastname,email,phoneNumber,password);
+        System.out.println("the user data is : "+firstname +" " +lastname+ " "+ email+ " "+ phoneNumber+ " "+password);
+ 
         Assert.assertTrue(registrationObject.successMessage.getText().contains("Congratulations!"));
 
 
@@ -35,13 +38,13 @@ public class UserRegistrationTest extends TestBase {
         registrationObject.userLogout();
 
     }
+
     @Test(dependsOnMethods = {"RegisteredUserCanLogout"})
-    public void RegisteredUserCanLogin ()
-    {
-        homeObject= new HomePage(driver);
+    public void RegisteredUserCanLogin() {
+        homeObject = new HomePage(getDriver());
         homeObject.openLoginPage();
-        loginObject = new LoginPage(driver);
-        loginObject.UserLogin("spidoxxx1level@gmail.com", "10045678");
+        loginObject = new LoginPage(getDriver());
+        loginObject.UserLogin(email, password);
         Assert.assertTrue(registrationObject.lgout.getText().contains("Logout"));
     }
 }
@@ -63,6 +66,6 @@ public class UserRegistrationTest extends TestBase {
 //       Assert.assertTrue(registrationObject.successMessage.getText().contains("Your Account"));
 
 
- //<methods>
-           // <include name="userCanRegistrateSuccessfully"/>
-               // </methods>
+//<methods>
+// <include name="userCanRegistrateSuccessfully"/>
+// </methods>
